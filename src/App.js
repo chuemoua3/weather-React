@@ -41,23 +41,23 @@ class App extends Component {
         console.log("Fetch Error :-S", err);
       });
 
-      this.getTime();
+      // this.getTime();
   }
   
-  getTime = () =>{
-    var moment = Moment();
-    var tz = this.state.timezone;
-    var currentTime = moment.tz(tz).format('dddd, MMMM Do YYYY, h:mm:ss a');
-    this.setState({
-      time:currentTime,
-    });
+  // getTime = () =>{
+  //   var moment = Moment();
+  //   var tz = this.state.timezone;
+  //   var currentTime = moment.tz(tz).format('dddd, MMMM Do YYYY, h:mm:ss a');
+  //   this.setState({
+  //     time:currentTime,
+  //   });
     // var current = Moment().utcOffset(tz).format('MMMM Do YYYY, h:mm:ss a');
     // //current = current.utcOffset(tz);
     // console.log(current)
     // this.setState({
     //   time: current,
     // })
-  }
+  //}
 
   // handleClick(){
   //   let zipInput = document.getElementById("zipInput").value;
