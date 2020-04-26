@@ -3,6 +3,7 @@ import "./App.css";
 import Moment from "moment";
 import "moment-timezone";
 //import tz from "zipcode-to-timezone";
+import { Jumbotron } from "reactstrap";
 
 class App extends Component {
   state = {};
@@ -31,11 +32,15 @@ class App extends Component {
         response.json().then((data) => {
           //console.log(data);
           this.setState({
-            temp: data.main.temp,
-            feels_like: data.main.feels_like,
+            temp: Math.floor(data.main.temp) + '° ',
             city: data.name,
             timezone: data.timezone,
             description: data.weather[0].description,
+            weatherPic: data.weather[0].main,
+            iconURL:
+              "http://openweathermap.org/img/w/" +
+              data.weather[0].icon +
+              ".png",
           });
           console.log(this.state);
         });
@@ -58,22 +63,32 @@ class App extends Component {
     });
   };
 
+  //enter key function
+  handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      this.getWeather();
+    }
+  };
+
   render() {
     return (
       <>
-        <div className="container">
-          <h3>What is your weather looking like?</h3>
-          <div className="container2">
+        <div className="container col-sm-12 cold-md-12 col-xs-12">
+            <h1>What is your weather looking like?</h1>
+
+          <div className="container2 col-sm-12 cold-md-12 col-xs-12">
             <input
               type="text"
+              onKeyPress={this.handleKeyPress}
               placeholder="Enter Zip Code here..."
               id="inputZip"
             ></input>
             <button onClick={this.getWeather}>Search</button>
-            <p>{this.state.time}</p>
-            <p>{this.state.city}</p>
-            <p>{this.state.temp}</p>
-            <p>{this.state.description}</p>
+            <p id="time">{this.state.time}</p>
+            <p id="city">{this.state.city}</p>
+            <p id="temp">{this.state.temp}</p>
+            <img className="weatherIcon" src={this.state.iconURL} alt=""></img>
+            <p id="desc">{this.state.description}</p>
           </div>
         </div>
       </>
