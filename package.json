@@ -1,5 +1,5 @@
 {
-  "homepage": "https://chuemoua3.github.io/weather-react-deploy",
+ 
   "name": "weather-react",
   "version": "0.1.0",
   "private": true,
@@ -17,13 +17,14 @@
     "reactstrap": "^8.4.1",
     "zipcode-to-timezone": "0.0.9"
   },
+  "homepage": "https://chuemoua3.github.io/weather-React",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
