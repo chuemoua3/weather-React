@@ -1,7 +1,7 @@
 body {
   background-image: url("https://i.pinimg.com/originals/5a/84/72/5a8472aeb04050c2b46082328d3fdb0d.gif");
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   height: 100vh;
   /* width: 100vh; */
 }
